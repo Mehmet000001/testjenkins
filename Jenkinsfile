@@ -3,8 +3,8 @@ pipeline {
     parameters { 
         choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') 
         }
-    stage {
-        stage ('Hello World'){
+    stages {
+        stage ('Hello World') {
             steps {
                 sh'echo "Hello World"'
             }
