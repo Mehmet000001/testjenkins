@@ -1,13 +1,17 @@
 pipeline {
     agent any
     parameters { 
-        choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') 
+        choice(
+            name: 'ExecuteAction', 
+            choices: ['build', 'destroy'], 
+            description: 'which action to take'
+            ) 
         }
 
     stages {
-        stage('Hello World') {
+        stage('Terraform init') {
             steps {
-                sh 'echo "Hello World"'
+                sh 'terraform init'
             }
         }
     }    
