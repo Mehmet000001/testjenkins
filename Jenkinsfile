@@ -6,7 +6,7 @@ pipeline {
     stage {
         stage ('Hello World'){
             steps {
-                sh'Hello World'
+                sh'echo "Hello World"'
             }
         }
     }    
