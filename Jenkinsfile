@@ -21,5 +21,11 @@ pipeline {
                 sh 'terraform apply --auto-approve'
             }
         }
+        stage('Terraform destroy') {
+            when { expression { params.ExecuteAction == 'build' } }
+            steps {
+                sh 'terraform destroy --auto-approve'
+            }
+        }
     }    
 }
