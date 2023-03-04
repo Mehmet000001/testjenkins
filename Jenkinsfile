@@ -18,6 +18,7 @@ pipeline {
             when { expression { params.Expression == 'build' } }
             steps{
                 sh 'terraform plan'
+                sh 'terraform apply --auto-approve'
             }
         }
     }    
