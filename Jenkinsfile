@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Terraform plan'){
-            when { expression { params.Expression == 'build'} }
+            when { expression { params.Expression == 'build' } }
             steps{
                 sh 'terraform plan'
             }
